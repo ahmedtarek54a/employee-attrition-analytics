@@ -12,6 +12,28 @@ from src.styles import get_glassmorphism_css
 import numpy as np
 from pathlib import Path
 
+
+# ===============================
+# PRIVATE CONFIG CHECK
+# ===============================
+APP_SECRET = os.getenv("ATTRITION_APP_SECRET")
+
+if APP_SECRET != "ALLOW_RUN":
+    raise RuntimeError(
+        "This application requires a private configuration to run."
+    )
+
+# ===============================
+# STREAMLIT CONFIG
+# ===============================
+st.set_page_config(
+    page_title="Pro | Employee Attrition AI",
+    layout="wide",
+    page_icon="🦁"
+)
+
+
+
 MODEL_DIR = Path("models")
 MODEL_DIR.mkdir(exist_ok=True)
 BASE_DIR = Path(__file__).parent
