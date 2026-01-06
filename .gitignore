@@ -1,0 +1,8 @@
+data/
+models/
+presentation/
+pyspark_version/
+__pycache__/
+*.joblib
+*.csv
+.env
